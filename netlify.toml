@@ -1,0 +1,9 @@
+# Square One Live — source stays at repository root for easy uploads from a phone.
+# Netlify builds the public site in /public; live.mjs is outside the published folder.
+[build]
+  command = "mkdir -p public && cp index.html bull.jpg lito.jpg characters.jpg review-qr.png public/"
+  publish = "public"
+  functions = "."
+
+[functions]
+  node_bundler = "esbuild"
